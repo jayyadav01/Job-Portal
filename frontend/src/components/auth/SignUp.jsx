@@ -75,7 +75,7 @@ const SignUp = () => {
       }));
       setTimeout(() => {
         setIsToast(false);
-        navigate('/')
+        navigate('/login')
       }, 2000);
       setSignUpData({
         name: "",
