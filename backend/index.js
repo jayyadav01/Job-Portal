@@ -14,7 +14,7 @@ const app = express();
 const PORT = 5000;
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:3000' || 'https://frontend-eta-rosy.vercel.app/',
   credentials: true,
 };
 

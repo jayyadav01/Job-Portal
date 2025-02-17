@@ -192,7 +192,7 @@ const update = async (req, res) => {
     if(skills)
     {
       if (skills.includes(",")) {
-        console.log(", separate ==",skills)
+        // console.log(", separate ==",skills)
         skillArray = skills.toString().split(",").map(item => item.trim());
       }
       else
