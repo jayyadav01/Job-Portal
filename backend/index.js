@@ -23,7 +23,7 @@ const PORT = 5000;
 
 const corsOptions = {
   origin: [
-    FRONTEND_URL, // Deployed frontend
+    "https://frontend-eta-rosy.vercel.app" , // Deployed frontend
     "http://localhost:3000", // Local development
   ],
   credentials: true,
