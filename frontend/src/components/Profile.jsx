@@ -44,9 +44,6 @@ const Profile = () => {
   const [imageLoader, setImageLoader] = useState(false);
   // const [showPassword, setShowPassword] = useState(false);
 
-  const userApiUrl = process.env.USER_API_END_POINT
-  console.log("user api end point => ",userApiUrl)
-
   useEffect(() => {
     const totalApplication = async () => {
       try {

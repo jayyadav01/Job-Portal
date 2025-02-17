@@ -13,9 +13,25 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const PORT = 5000;
 
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+// };
+
+const allowedOrigins = [
+  "http://localhost:3000", // Local development
+  "https://frontend-eta-rosy.vercel.app", // Deployed frontend
+];
+
 const corsOptions = {
-  origin: 'http://localhost:3000' || 'https://frontend-eta-rosy.vercel.app/',
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Allow cookies if needed
 };
 
 app.use(cors(corsOptions))
