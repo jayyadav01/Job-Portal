@@ -9,6 +9,9 @@ const companyRouter = require("./routes/company.route")
 const jobRouter = require("./routes/job.route");
 const applicationRouter = require("./routes/application.route");
 const cookieParser = require("cookie-parser");
+const FRONTEND_URL = process.env.FRONTEND_URL;
+
+console.log("frontend url from live => ",FRONTEND_URL)
 
 const app = express();
 const PORT = 5000;
@@ -18,20 +21,12 @@ const PORT = 5000;
 //   credentials: true,
 // };
 
-const allowedOrigins = [
-  "http://localhost:3000", // Local development
-  "https://frontend-eta-rosy.vercel.app", // Deployed frontend
-];
-
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true, // Allow cookies if needed
+  origin: [
+    FRONTEND_URL, // Deployed frontend
+    "http://localhost:3000", // Local development
+  ],
+  credentials: true,
 };
 
 app.use(cors(corsOptions))
