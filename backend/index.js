@@ -11,7 +11,7 @@ const applicationRouter = require("./routes/application.route");
 const cookieParser = require("cookie-parser");
 const FRONTEND_URL = process.env.FRONTEND_URL;
 
-console.log("frontend url from live => ",FRONTEND_URL)
+console.log("frontend url from live => ", FRONTEND_URL)
 
 const app = express();
 const PORT = 5000;
@@ -23,21 +23,23 @@ const PORT = 5000;
 
 const corsOptions = {
   origin: [
-    "https://frontend-eta-rosy.vercel.app" , // Deployed frontend
+    "https://frontend-eta-rosy.vercel.app", // Deployed frontend
     "http://localhost:3000", // Local development
   ],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure all methods are allowed
+  allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow necessary headers
 };
 
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
-app.use("/api/user",userRouter)
-app.use("/api/company",companyRouter)
-app.use("/api/job",jobRouter)
-app.use("/api/application",applicationRouter)
+app.use("/api/user", userRouter)
+app.use("/api/company", companyRouter)
+app.use("/api/job", jobRouter)
+app.use("/api/application", applicationRouter)
 
 ConnectDB(process.env.MONGO_URL)
   .then(() => {
