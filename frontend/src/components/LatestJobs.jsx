@@ -36,8 +36,8 @@ const LatestJobs = () => {
         </h1>
 
         <div className="cards">
-          {jobData.length > 0 ? (
-            <JobCard jobs={jobData.slice(start, end).reverse()} />
+          {jobData?.length > 0 ? (
+            <JobCard jobs={jobData?.slice(start, end).reverse()} />
           ) : (
             <span style={{ color: "red", fontSize: "1.2rem" }}>
               No Jobs available
