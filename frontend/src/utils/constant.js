@@ -4,7 +4,7 @@ console.log("is production => ",isProduction)
 
 // Set BASE_URL based on environment
 const BASE_URL = isProduction
-  ? "https://frontend-eta-rosy.vercel.app" // Production URL
+  ? "https://backend-pi-eight-54.vercel.app" // Production URL
   : "http://localhost:5000"; // Local development URL
 
 
