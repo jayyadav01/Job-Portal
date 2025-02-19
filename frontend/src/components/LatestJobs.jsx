@@ -25,7 +25,7 @@ const LatestJobs = () => {
     getJob();
   }, []);
 
-  let end = jobData.length
+  let end = jobData?.length
   let start = end - 6
 
   return (
