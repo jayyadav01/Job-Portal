@@ -41,6 +41,10 @@ app.use("/api/company", companyRouter)
 app.use("/api/job", jobRouter)
 app.use("/api/application", applicationRouter)
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to the backend API!" });
+});
+
 // Health check endpoint
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK", message: "Backend is running" });
