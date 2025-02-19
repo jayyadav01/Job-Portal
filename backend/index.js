@@ -41,6 +41,11 @@ app.use("/api/company", companyRouter)
 app.use("/api/job", jobRouter)
 app.use("/api/application", applicationRouter)
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK", message: "Backend is running" });
+});
+
 ConnectDB(process.env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => {
