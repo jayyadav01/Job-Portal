@@ -23,15 +23,15 @@ const PORT = 5000;
 
 const corsOptions = {
   origin: [
-    FRONTEND_URL, // Deployed frontend
+    "https://frontend-eta-rosy.vercel.app", // Deployed frontend
     "http://localhost:3000", // Local development
   ],
-  credentials: true,
+  credentials: true, // Required for cookies
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Ensure all methods are allowed
-  // allowedHeaders: ["Content-Type", "Authorization"], // Explicitly allow necessary headers
+  allowedHeaders: ["Content-Type", "Authorization"], // Ensure headers are allowed
 };
 
-app.use(cors(corsOptions))
+app.use("*",cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
