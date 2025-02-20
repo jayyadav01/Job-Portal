@@ -34,7 +34,7 @@ const JobCard = ({ jobs }) => {
                   </div>
 
                   <Card.Text>
-                    <h6 style={{ fontSize: "14px" }}>{ele?.company?.name}</h6>
+                    <span style={{ fontSize: "14px", fontWeight: "bold" }}>{ele?.company?.name}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
