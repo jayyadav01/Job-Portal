@@ -43,7 +43,7 @@ app.use("/api/job", jobRouter)
 app.use("/api/application", applicationRouter)
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Welcome to the backend API!" });
+  res.status(200).json("Welcome to the backend API!");
 });
 
 // Health check endpoint
