@@ -14,7 +14,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 console.log("frontend url from live => ", FRONTEND_URL)
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000; // Use Vercel's dynamic port
 
 // const corsOptions = {
 //   origin: 'http://localhost:3000',
